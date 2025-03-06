@@ -24,6 +24,10 @@
             <div>
                 <input type="text" name="id"/>
             </div>
+            <c:if test="${idError != null}">
+                <div style="color:red; font-size: small">${idError}</div>
+            </c:if>
+
         </div>
         <div >
             <label>비밀번호(*)</label>
@@ -64,4 +68,3 @@
 </div>
 </body>
 </html>
-

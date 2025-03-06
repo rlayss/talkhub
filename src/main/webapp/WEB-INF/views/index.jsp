@@ -10,9 +10,13 @@
 <html>
 <head>
   <title>TalkHub</title>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"/>
 </head>
 <body>
-<h1>TalkHub</h1>
+<h1 >TalkHub</h1>
+<p class="color-primary underline">
+  토크허브를 통해 사람들과 의견을 나누세요.
+</p>
 <c:choose>
   <c:when test="${authentication}">
     <div>
@@ -25,11 +29,10 @@
       <a href="${pageContext.request.contextPath}/user/login">로그인</a>
       <a href="${pageContext.request.contextPath}/user/join">회원가입</a>
     </div>
-
   </c:otherwise>
 </c:choose>
 <p>
-  TalkHub 에 오신 것을 환영합니다!
+  <b class="color-primary">TalkHub</b> 에 오신 것을 <span>환영</span>합니다!
 </p>
 </body>
 </html>

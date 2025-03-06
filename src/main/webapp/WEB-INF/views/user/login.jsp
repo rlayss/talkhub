@@ -17,7 +17,7 @@
     "TalkHub에 오신 것을 환영합니다!".
     지금 로그인하고, 다양한 주제에 대해 자유롭게 이야기하세요.
 </p>
-<form action="${pageContext.request.contextPath}/user/login-proceed">
+<form action="${pageContext.request.contextPath}/user/login-proceed" method="post">
     <div>
         <label>아이디</label>
         <div>
