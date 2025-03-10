@@ -22,24 +22,32 @@
         <div >
             <label>아이디(*)</label>
             <div>
-                <input type="text" name="id"/>
+                <input type="text" name="id" value="${param.id}"/>
             </div>
             <c:if test="${idError != null}">
                 <div style="color:red; font-size: small">${idError}</div>
             </c:if>
-
+            <c:if test="${idDuplicatedError != null}">
+                <div style="color:red; font-size: small">${idDuplicatedError}</div>
+            </c:if>
         </div>
         <div >
             <label>비밀번호(*)</label>
             <div>
-                <input type="password" name="password"/>
+                <input type="password" name="password" value="${param.password}"/>
             </div>
+            <c:if test="${passwordError != null}">
+                <div style="color:red; font-size: small">${passwordError}</div>
+            </c:if>
         </div>
         <div >
             <label>활동명(*)</label>
             <div>
-                <input type="text"  name="nickname"/>
+                <input type="text"  name="nickname"  value="${param.nickname}"/>
             </div>
+            <c:if test="${nicknameError != null}">
+                <div style="color:red; font-size: small">${nicknameError}</div>
+            </c:if>
         </div>
         <div >
             <label>성별(*)</label>
@@ -61,6 +69,9 @@
                 </select>
             </div>
         </div>
+        <c:if test="${dbError != null}">
+            <div style="color:red; font-size: small">${dbError}</div>
+        </c:if>
         <div >
             <button type="submit" >가입하기</button>
         </div>

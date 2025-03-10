@@ -1,5 +1,6 @@
 package org.codenova.talkhub.controller.user;
 
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -30,7 +31,7 @@ public class ProfileServlet extends HttpServlet {
         User user = (User) req.getSession().getAttribute("user");
         req.setAttribute("user", user);
 
-        // 2. 세팅해둔 유저객체의 id를 화룡해서 다시 재조회 하는 방법도 가능할 듯
+        // 2. 로그인시 세팅해둔 로그인 유저객체의 id를 활용해서 다시 재조회 하는 방법도 가능할 듯
         String userId = user.getId();
         UserDAO userDao = new UserDAO();
         User found = userDao.findById(userId);
@@ -38,5 +39,8 @@ public class ProfileServlet extends HttpServlet {
         // req.setAttribute("user", found);
 
         req.getRequestDispatcher("/WEB-INF/views/user/profile.jsp").forward(req, resp);
+
+
+
     }
 }
